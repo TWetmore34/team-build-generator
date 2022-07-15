@@ -1,0 +1,32 @@
+.custom-bg {
+    background-color: rgba(206, 79, 41, 0.907);
+}
+
+.logo {
+    display: inline-block;
+}
+
+.custom-card-bg {
+    background-color: rgb(240, 237, 237);
+    border-radius: 0 0 2% 2%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.card-header-radius {
+    border-radius: 2% 2% 0 0;
+}
+
+.box-shadow {
+    box-shadow: 5px 10px 10px #888888;
+}
+
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.bg-blue {
+    background-color: rgb(80, 127, 223);
+    font-family: 'Playfair Display', serif;
+}

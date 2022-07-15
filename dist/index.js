@@ -1,6 +1,9 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const Employees = require('./classes');
+const render = require('./renderhtml');
+
+
 // questions for inquirer
 let questions = {
     manager: [
@@ -102,6 +105,8 @@ function loop(response){
         
         let manager = new Employees.Manager(managerName, managerId, managerEmail, managerOffice)
         console.log(manager)
+        fs.writeFileSync('index.html', render.renderManager(manager))
+        
         // if response.loop from manager q set is true, run qLoop with a response of the desired employee type
         if(response.loop) {inquirer.prompt(questions.employeeType).then(res => {qLoop(res)})}
         // else, end the function
@@ -111,8 +116,8 @@ function loop(response){
     else {
     inquirer.prompt(questions.loop).then(res => {
         if(res.loop) {inquirer.prompt(questions.employeeType).then(res => {qLoop(res)})}
-        // else, end function
-        else return
+        // else, end function and append end of html
+        else return fs.appendFileSync('index.html', render.renderEnd())
     })}}
 
 function qLoop (response) {
@@ -123,7 +128,7 @@ function qLoop (response) {
 
                 let intern = new Employees.Intern(internName, internId, internEmail, internSchool);
 
-                console.log(intern)
+                fs.appendFileSync('index.html', render.renderIntern(intern))
                 // import a render html function
                 // use the newly made class as a parameter to render it- that also means im gonna need to set up a first thing function call to make the boilerplate stuff
                 // i think ill do that one in the manager section bc it only runs once, then the rest of these are appended
@@ -137,7 +142,7 @@ function qLoop (response) {
 
             let engineer = new Employees.Engineer(engineerName, engineerId, engineerEmail, engineerGit);
 
-            console.log(engineer)
+            fs.appendFileSync('index.html', render.renderEngineer(engineer))
             // call loop with defined response parameter
             loop(response)
 })}}
