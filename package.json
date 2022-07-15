@@ -1,0 +1,28 @@
+{
+  "name": "team-build-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TWetmore34/team-build-generator.git"
+  },
+  "author": "TJ Wetmore",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TWetmore34/team-build-generator/issues"
+  },
+  "homepage": "https://github.com/TWetmore34/team-build-generator#readme",
+  "dependencies": {
+    "inquirer": "^6.5.0"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
+}
