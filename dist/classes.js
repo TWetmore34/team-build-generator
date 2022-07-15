@@ -1,39 +1,48 @@
 class Employee {
-    constructor(name, id, email) {
+    constructor(name, id, email, role) {
         this.name = name;
         this.id = id;
         this.email = email;
-        this.roll = 'employee';
+        this.role = role;
     }
 }
 
 Employee.prototype.getName = function() {
     return this.name;
-}
+};
 
 Employee.prototype.getEmail = function() {
     return this.email;
-}
+};
 
 Employee.prototype.getRole = function () {
-    return this.roll;
-}
+    return this.role;
+};
 
 class Manager extends Employee {
     constructor(name, id, email, officeNumber) {
+        super(name, id, email, 'Manager');
         this.officeNumber = officeNumber;
-        this.role = 'Manager'
-        this.name = super(name)
-        
-    super(name, id, email);
-        this.name = name;
-        this.id = id;
-        this.email = email;
-        this.role = 'employee'
     }
+};
+
+class Engineer extends Employee {
+    constructor(name, id, email, github){
+        super(name, id, email, 'Engineer')
+        this.github = github
+    }
+};
+
+class Intern extends Employee {
+    constructor(name, id, email, school){
+    super(name, id, email, 'Intern')
+    this.school = school;
+}
 }
 
 module.exports = {
     Employee,
-    Manager
+    Manager,
+    Engineer,
+    Intern
 }

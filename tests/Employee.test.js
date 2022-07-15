@@ -29,21 +29,12 @@ describe('classes', () => {
         });
 
         it('It should return the employee role on running getRole', () => {
-            let employee = new Employee.Employee('James', '0013', 'JamieBoy@gmail.com')
+            let employee = new Employee.Employee('James', '0013', 'JamieBoy@gmail.com', 'employee')
 
             expect(employee.getRole()).toEqual('employee')
         });
         
-        it('It should store a name value from Employee',() => {
-            let manager = new Employee.Manager('1002').super('Julie', '0010', 'JuliesThaBest@hotmail.com');
+        
 
-            expect(manager.name).toEqual('Julie')
-        })
-
-        it('It should store an office number', () => {
-            let manager = new Employee.Manager('1002');
-
-            expect(manager.officeNumber).toEqual('1002')
-        })
     });
 });
