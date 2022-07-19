@@ -5,9 +5,7 @@
   1. [Installation](#project-installation)
   2. [Usage](#project-use)
   3. [License](#project-license)
-  4. [Contributing](#contribution-guidelines)
-  5. [Tests](#testing-instructions)
-  6. [Questions](#(questions))
+  4. [Questions](#(questions))
   
   ## Project installation
   Fork the github repository and clone it onto your local machine 
